@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caleb Ward — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --green-dark: #00523e;
+      --green-mid: #2a7a60;
+      --bg: #c1cac5;
+      --text: #1a3a2e;
+      --text-muted: #4a7060;
+      --card-bg: #a8bfb5;
+      --input-border: #2a7a60;
+    }
+
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-name {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: 0.05em;
+    }
+
+    .logo-icon {
+      width: clamp(65px, 10vw, 110px);
+      height: auto;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 3vw, 3rem);
+      flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ── Main ── */
+    main { flex: 1; }
+
+    /* ── Pages ── */
+    .page { display: none; padding: 3rem 2rem 4rem; max-width: 1200px; margin: 0 auto; }
+    .page.active { display: block; }
+
+    /* ── Titles ── */
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .section-subtitle {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 600;
+      color: var(--green-dark);
+      margin: 3rem 0 1.5rem;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    /* ── Home layout ── */
+    .home-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .home-text h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .home-text p {
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .home-photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--card-bg);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .home-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  
+    /* ── Featured strip ── */
+    .featured-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    /* ── Grid ── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .grid-item {
+      background: var(--card-bg);
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    .grid-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── Contact ── */
+    .contact-wrap { max-width: 600px; margin: 0 auto; }
+
+    .contact-wrap h2 {
+      text-align: center;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-intro {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-field { margin-bottom: 1rem; }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: transparent;
+      border: 1.5px solid var(--input-border);
+      border-radius: 4px;
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      outline: none;
+    }
+
+    input::placeholder, textarea::placeholder { color: var(--text-muted); }
+    input:focus, textarea:focus, select:focus { border-color: var(--green-dark); }
+    select { cursor: pointer; }
+
+    textarea { min-height: 160px; resize: vertical; }
+
+    .btn-send {
+      display: block;
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--green-dark);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-send:hover { background: var(--green-mid); }
+
+    .contact-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .contact-detail-card {
+      background: var(--card-bg);
+      border-radius: 4px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .contact-detail-card .label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-detail-card .value { font-size: 1rem; font-weight: 600; color: var(--text); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: #fff; }
+
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+     .home-layout { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .services { grid-template-columns: 1fr 1fr; }
+      .featured-strip { grid-template-columns: 1fr; }
+      .contact-details { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 580px) {
+      .home-layout { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .services { grid-template-columns: 1fr 1fr; }
+      .featured-strip { grid-template-columns: 1fr; }
+      .contact-details { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <span class="logo-name">Caleb</span>
+    <img src="images/GreenLogo.png" alt="LogoMark" class="logo-icon">
+    <span class="logo-name">Ward</span>
+  </div>
+  <nav>
+    <a href="#" class="active" onclick="return showPage('home', this)">Home</a>
+    <a href="#" onclick="return showPage('graphic', this)">Graphic Design</a>
+    <a href="#" onclick="return showPage('video', this)">Video Editing</a>
+    <a href="#" onclick="return showPage('drone', this)">Drone &amp; 360</a>
+    <a href="#" onclick="return showPage('contact', this)">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Home -->
+  <div id="home" class="page active">
+    <div class="home-layout">
+      <div class="home-text">
+        <h2 class="section-title">About Me</h2>
+        <p>My name is Caleb Ward. I have five years of experience with freelance and academic design work in web design, aerial footage capture, photography, and Adobe Creative Cloud software. I love all things technology and am always looking to learn more and tackle new projects. I am a quick learner and want to see everyone succeed.</p>
+        <p>Professional social media video edits, fast website creation/updates, complete business branding, and drone and photography services are all things I am confident in providing. Whether working with a local business or doing complete remote work, I strive to build good connections with everyone and make working with me as easy as possible. I look forward to working with new and old clients and hope that we can create something remarkable together.</p>
+      </div>
+      <div class="home-photo">
+        <img src="images/ward-self-portrait.jpg" alt="Caleb Ward">
+      </div>
+    </div>
+
+
+
+    <h3 class="section-subtitle">Featured Work</h3>
+    <div class="featured-strip">
+      <div class="grid-item" style="aspect-ratio:4/3"><span>Featured Project 1</span></div>
+      <div class="grid-item" style="aspect-ratio:4/3"><span>Featured Project 2</span></div>
+      <div class="grid-item" style="aspect-ratio:4/3"><span>Featured Project 3</span></div>
+    </div>
+  </div>
+
+  <!-- Graphic Design -->
+  <div id="graphic" class="page">
+    <h2 class="section-title">Graphic Design</h2>
+
+    <h3 class="section-subtitle">Websites</h3>
+    <div class="grid-2">
+      <div class="grid-item"><span>Website Project 1</span></div>
+      <div class="grid-item"><span>Website Project 2</span></div>
+      <div class="grid-item"><span>Website Project 3</span></div>
+      <div class="grid-item"><span>Website Project 4</span></div>
+      <div class="grid-item"><span>Website Project 5</span></div>
+      <div class="grid-item"><span>Website Project 6</span></div>
+    </div>
+
+    <h3 class="section-subtitle">Logos &amp; Branding</h3>
+    <div class="grid-2">
+      <div class="grid-item"><span>Logo Project 1</span></div>
+      <div class="grid-item"><span>Logo Project 2</span></div>
+      <div class="grid-item"><span>Logo Project 3</span></div>
+      <div class="grid-item"><span>Logo Project 4</span></div>
+    </div>
+
+    <h3 class="section-subtitle">Print &amp; Social Media</h3>
+    <div class="grid-2">
+      <div class="grid-item"><span>Print Design 1</span></div>
+      <div class="grid-item"><span>Print Design 2</span></div>
+      <div class="grid-item"><span>Social Media 1</span></div>
+      <div class="grid-item"><span>Social Media 2</span></div>
+    </div>
+  </div>
+
+  <!-- Video Editing -->
+  <div id="video" class="page">
+    <h2 class="section-title">Video Editing</h2>
+
+    <h3 class="section-subtitle">Promotional Videos</h3>
+    <div class="grid-2">
+      <div class="grid-item"><span>Promo Video 1</span></div>
+      <div class="grid-item"><span>Promo Video 2</span></div>
+      <div class="grid-item"><span>Promo Video 3</span></div>
+      <div class="grid-item"><span>Promo Video 4</span></div>
+    </div>
+
+    <h3 class="section-subtitle">Social Media Reels</h3>
+    <div class="grid-2">
+      <div class="grid-item"><span>Reel 1</span></div>
+      <div class="grid-item"><span>Reel 2</span></div>
+      <div class="grid-item"><span>Reel 3</span></div>
+      <div class="grid-item"><span>Reel 4</span></div>
+    </div>
+
+    <h3 class="section-subtitle">Event &amp; Documentary</h3>
+    <div class="grid-2">
+      <div class="grid-item"><span>Event Video 1</span></div>
+      <div class="grid-item"><span>Event Video 2</span></div>
+      <div class="grid-item"><span>Documentary Clip 1</span></div>
+      <div class="grid-item"><span>Documentary Clip 2</span></div>
+    </div>
+  </div>
+
+  <!-- Drone & 360 -->
+  <div id="drone" class="page">
+    <h2 class="section-title">Drone &amp; 360</h2>
+
+    <h3 class="section-subtitle">Drone Photography</h3>
+    <div class="grid-2">
+      <div class="grid-item"><span>Drone Photo 1</span></div>
+      <div class="grid-item"><span>Drone Photo 2</span></div>
+      <div class="grid-item"><span>Drone Photo 3</span></div>
+      <div class="grid-item"><span>Drone Photo 4</span></div>
+      <div class="grid-item"><span>Drone Photo 5</span></div>
+      <div class="grid-item"><span>Drone Photo 6</span></div>
+    </div>
+
+    <h3 class="section-subtitle">Drone Video</h3>
+    <div class="grid-2">
+      <div class="grid-item"><span>Drone Video 1</span></div>
+      <div class="grid-item"><span>Drone Video 2</span></div>
+      <div class="grid-item"><span>Drone Video 3</span></div>
+      <div class="grid-item"><span>Drone Video 4</span></div>
+    </div>
+
+    <h3 class="section-subtitle">360° Photography</h3>
+    <div class="grid-2">
+      <div class="grid-item"><span>360° View 1</span></div>
+      <div class="grid-item"><span>360° View 2</span></div>
+      <div class="grid-item"><span>360° View 3</span></div>
+      <div class="grid-item"><span>360° View 4</span></div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact" class="page">
+    <div class="contact-wrap">
+      <h2>Let's Chat</h2>
+      <p class="contact-intro">Have a project in mind? Fill out the form below and I'll get back to you as soon as possible.</p>
+
+      <div class="form-row">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+      </div>
+      <div class="form-field">
+        <input type="text" placeholder="Subject">
+      </div>
+      <div class="form-field">
+        <select>
+          <option value="" disabled selected>Type of Project</option>
+          <option>Web Design</option>
+          <option>Video Editing</option>
+          <option>Drone &amp; 360</option>
+          <option>Branding / Logo</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <textarea placeholder="Your Message"></textarea>
+      </div>
+      <button class="btn-send">Send Message</button>
+
+      
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span>&copy; 2025 Caleb Ward. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="#" onclick="return showPage('contact', document.querySelectorAll('nav a')[4])">Contact</a>
+    <a href="#">Instagram</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  function showPage(id, link) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (link) link.classList.add('active');
+    window.scrollTo(0, 0);
+    return false;
+  }
+</script>
+</body>
+</html>
