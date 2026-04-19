@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caleb Ward — Graphic Design</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <span class="logo-name">Caleb</span>
+    <img src="images/GreenLogo.png" alt="LogoMark" class="logo-icon">
+    <span class="logo-name">Ward</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="graphic-design.html" class="active">Graphic Design</a>
+    <a href="video-editing.html">Video Editing</a>
+    <a href="drone-360.html">Drone &amp; 360</a>
+    <a href="photography.html">Photography</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="body-page">
+    
+    <h3 class="section-subtitle">Websites</h3>
+    <div class="grid-2">
+
+      <button
+        type="button"
+        class="grid-item photo-landscape website-showcase-trigger"
+        aria-label="Open Idaho Sky website showcase"
+        data-showcase-id="idaho-sky"
+      >
+        <img
+          src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776544668/MacbookIdahoMockup_xjih4t.jpg"
+          alt="Idaho Sky Website Mockup"
+          data-website-showcase
+        >
+        <span class="website-showcase-overlay">see more</span>
+      </button>
+      
+
+      <button
+        type="button"
+        class="grid-item photo-landscape website-showcase-trigger"
+        aria-label="Open Grinnell website showcase"
+        data-showcase-id="grinnell"
+      >
+        <img
+          src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776547519/WebsiteMockupScale_moap4k.jpg"
+          alt="Grinnell Website mockup"
+          data-website-showcase
+        >
+        <span class="website-showcase-overlay">see more</span>
+      </button>
+    
+    </div>
+
+    <h3 class="section-subtitle">Branding</h3>
+    <div class="grid-2">
+    <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776549370/LogoMockup_bsn5ga.jpg" alt="Logo Mockup"></div>
+      <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776549389/BusinessCardMockup_klrkvu.jpg" alt="Business Card Mockup"></div>
+      <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776550357/DesignLogo_dzevzw.jpg" alt="Design Logo"></div>
+      <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776550358/DesignBreakdown_uoyokh.jpg" alt="Design Breakdown"></div>
+
+    </div>
+
+    <h3 class="section-subtitle">Print Designs</h3>
+    <div class="grid-2">
+    <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776551391/PosterDesignBreakdown_xfgjkq.jpg" alt="Poster Design Breakdown"></div>
+      <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776549017/PostersExpanded_szpkbn.jpg" alt="3 poster mockup"></div>
+    <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776588538/PostcardUpdate_vugiug.jpg" alt="Postcard Update"></div>
+      <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776588540/Postcard_Mockup_1_qfrvjc.jpg" alt="Postcard Mockup"></div>
+ 
+    </div>
+    
+    
+    <h3 class="section-subtitle">Mobile Designs</h3>
+    <div class="grid-2">
+    <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776550634/UpdatedPhoneMockup_pwmjrv.jpg" alt="Mobile Design"></div>
+      <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776550612/Extended3ScreensMockup_jbwzbb.jpg" alt="App Interior Screens"></div>
+      <div class="grid-item photo-landscape"><img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776551503/Mockup2_s0l9zg.jpg" alt="Social Media Mockup"></div>
+ 
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <span>&copy; 2026 Caleb Ward. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="contact.html">Contact</a>
+    <a href="#">Instagram</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="imageLightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview">&times;</button>
+  <img id="lightboxImage" src="" alt="Expanded preview">
+</div>
+
+<div class="website-modal" id="websiteShowcase" aria-hidden="true">
+  <button class="lightbox-close" id="websiteShowcaseClose" aria-label="Close website showcase">&times;</button>
+
+  <div class="website-modal-stage">
+    <img id="websiteShowcaseImage" src="" alt="Website showcase image">
+    <iframe
+      id="websiteShowcaseVideo"
+      src=""
+      title="Website showcase video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div class="website-modal-controls">
+    <button type="button" class="btn-send website-modal-btn" id="websiteShowcasePrev">Previous</button>
+    <span class="website-modal-count" id="websiteShowcaseCount">1 / 3</span>
+    <button type="button" class="btn-send website-modal-btn" id="websiteShowcaseNext">Next</button>
+  </div>
+</div>
+
+<script src="scripts.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Caleb Ward — Contact</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+	<div class="logo">
+		<span class="logo-name">Caleb</span>
+		<img src="images/GreenLogo.png" alt="LogoMark" class="logo-icon">
+		<span class="logo-name">Ward</span>
+	</div>
+	<nav>
+		<a href="index.html">Home</a>
+		<a href="graphic-design.html">Graphic Design</a>
+		<a href="video-editing.html">Video Editing</a>
+		<a href="drone-360.html">Drone &amp; 360</a>
+		<a href="photography.html">Photography</a>
+		<a href="contact.html" class="active">Contact</a>
+	</nav>
+</header>
+
+<main>
+	<section class="body-page home">
+		<div class="contact-wrap">
+			<h2>Let's Chat</h2>
+			<p>Have a project in mind? Fill out the form below and I'll get back to you as soon as possible.</p>
+
+			<form id="contactForm" action="https://formsubmit.co/calebwardgraphicdesign@gmail.com" method="POST">
+				<input type="hidden" name="_captcha" value="false">
+				<div class="form-row">
+					<input type="text" name="name" placeholder="Name" autocomplete="name" required>
+					<input type="email" name="email" placeholder="Email" autocomplete="email" required>
+				</div>
+				<div class="form-field">
+					<input type="text" name="subject" placeholder="Subject" required>
+				</div>
+				<div class="form-field">
+					<select name="projectType" required>
+						<option value="" disabled selected>Type of Project</option>
+						<option value="Web Design">Web Design</option>
+						<option value="Video Editing">Video Editing</option>
+						<option value="Drone &amp; 360">Drone &amp; 360</option>
+						<option value="Branding / Logo">Branding / Logo</option>
+						<option value="Photography">Photography</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+				<div class="form-field">
+					<textarea name="message" placeholder="Your Message" required></textarea>
+				</div>
+				<button class="btn-send" type="submit">Send Message</button>
+				<p id="contactFormStatus" class="form-status" role="status" aria-live="polite"></p>
+			</form>
+		</div>
+
+
+            <h3 class="section-subtitle">Featured Work</h3>
+    <div class="featured-strip">
+      <a class="grid-item photo-landscape featured-project-card" href="graphic-design.html?showcase=idaho-sky" aria-label="Open Idaho Sky featured project">
+        <img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776544668/MacbookIdahoMockup_xjih4t.jpg" alt="Idaho Sky website featured project preview">
+        <span>Idaho Sky Website</span>
+      </a>
+      <a class="grid-item photo-landscape featured-project-card" href="graphic-design.html?image=https%3A%2F%2Fres.cloudinary.com%2Fdewtyrnh4%2Fimage%2Fupload%2Fv1776549017%2FPostersExpanded_szpkbn.jpg" aria-label="Open Posters featured project">
+        <img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776549017/PostersExpanded_szpkbn.jpg" alt="Poster design featured project preview">
+        <span>Poster Designs</span>
+      </a>
+      <a class="grid-item photo-landscape featured-project-card" href="video-editing.html?video=YKCeKWzE3LI" aria-label="Open Branding featured project">
+        <img src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776590146/LogosThumbnail_nawhid.jpg" alt="Branding video featured project preview">
+        <span>Branding Video</span>
+      </a>
+    </div>
+	</section>
+</main>
+
+<footer>
+	<span>&copy; 2026 Caleb Ward. All rights reserved.</span>
+	<div class="footer-links">
+		<a href="contact.html">Contact</a>
+		<a href="#">Instagram</a>
+		<a href="#">LinkedIn</a>
+	</div>
+</footer>
+
+	<script src="scripts.js" defer></script>
+</body>
+</html>
+

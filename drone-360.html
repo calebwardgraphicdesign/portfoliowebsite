@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caleb Ward — Video Editing</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <span class="logo-name">Caleb</span>
+    <img src="images/GreenLogo.png" alt="LogoMark" class="logo-icon">
+    <span class="logo-name">Ward</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="graphic-design.html">Graphic Design</a>
+    <a href="video-editing.html">Video Editing</a>
+    <a href="drone-360.html" class="active">Drone &amp; 360</a>
+    <a href="photography.html">Photography</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="body-page">
+    
+      <h3 class="section-subtitle">Interactive Drone Scans</h3>
+          <p style="margin-top:-1rem;">Click and Drag to Pan. Scroll to Zoom.</p>
+
+      <div class="grid-2">
+        <div class="grid-item photo-landscape video-tile" data-video-provider="custom" data-video-src="https://lumalabs.ai/embed/a07653bd-691c-4fea-b0b8-e38c646c5f79?mode=sparkles&amp;background=%230c0d0b&amp;color=%23FFFFFF&amp;showTitle=false&amp;loadBg=true&amp;logoPosition=bottom-left&amp;infoPosition=bottom-right&amp;cinematicVideo=undefined&amp;showMenu=false">
+          <img class="video-poster" src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776584765/DroneScan1_ik7ltd.jpg" alt="3D scan preview">
+          <div class="video-frame" aria-hidden="true"></div>
+          <button type="button" class="video-play-btn scan-play-btn" aria-label="Play 3D scan"></button>
+          <button type="button" class="video-expand-btn scan-expand-btn" aria-label="Expand 3D scan">Expand</button>
+        </div>
+
+        <div class="grid-item photo-landscape video-tile" data-video-provider="custom" data-video-src="https://lumalabs.ai/embed/0a99d96e-1028-4803-a113-0fa89a26341d?mode=sparkles&background=%231d1b1b&color=%23FFFFFF&showTitle=false&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false">
+          <img class="video-poster" src="https://res.cloudinary.com/dewtyrnh4/image/upload/v1776585956/DroneScanImg2_bxn2dn.jpg" alt="3D scan preview 2">
+          <div class="video-frame" aria-hidden="true"></div>
+          <button type="button" class="video-play-btn scan-play-btn" aria-label="Play 3D scan"></button>
+          <button type="button" class="video-expand-btn scan-expand-btn" aria-label="Expand 3D scan">Expand</button> </div>
+       
+      </div>
+
+    <h3 class="section-subtitle">Interactive Tour</h3>
+<p style="margin-top:-1rem;">Click on any building to explore inside. It will open in a new tab.</p>
+     <div class="grid-item campus-tour-tile" aria-label="FVCC campus interactive tour" style="margin-bottom:4rem;">
+          <button type="button" class="campus-tour-fullscreen-btn" aria-label="Open campus tour fullscreen">Fullscreen</button>
+          <iframe
+            src="https://www.fvcc.edu/wp-content/uploads/fvcc-virtual-tour-web/index.html"
+            title="FVCC Campus Interactive Tour"
+            loading="lazy"
+            allow="fullscreen; xr-spatial-tracking"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+
+          <h3 class="section-subtitle">Cinematic Shots</h3>
+      <div class="grid-2">
+        <div class="grid-item photo-landscape video-tile" data-youtube-id="sEGsPvr8KKE">
+          <img class="video-poster" src="https://img.youtube.com/vi/sEGsPvr8KKE/hqdefault.jpg" alt="Cinematic shot video 1 preview">
+          <div class="video-frame" aria-hidden="true"></div>
+          <button type="button" class="video-play-btn" aria-label="Play cinematic shot video 1"></button>
+        </div>
+        <div class="grid-item photo-landscape video-tile" data-youtube-id="M8B3gVuwBc4">
+          <img class="video-poster" src="https://img.youtube.com/vi/M8B3gVuwBc4/hqdefault.jpg" alt="Cinematic shot video 2 preview">
+          <div class="video-frame" aria-hidden="true"></div>
+          <button type="button" class="video-play-btn" aria-label="Play cinematic shot video 2"></button>
+        </div>
+        <div class="grid-item photo-landscape video-tile" data-youtube-id="v3CX9TQMAAo">
+          <img class="video-poster" src="https://img.youtube.com/vi/v3CX9TQMAAo/hqdefault.jpg" alt="Cinematic shot video 3 preview">
+          <div class="video-frame" aria-hidden="true"></div>
+          <button type="button" class="video-play-btn" aria-label="Play cinematic shot video 3"></button>
+        </div>
+        <div class="grid-item photo-landscape video-tile" data-youtube-id="CkwpWdRp2NM">
+          <img class="video-poster" src="https://img.youtube.com/vi/CkwpWdRp2NM/hqdefault.jpg" alt="Cinematic shot video 4 preview">
+          <div class="video-frame" aria-hidden="true"></div>
+          <button type="button" class="video-play-btn" aria-label="Play cinematic shot video 4"></button>
+
+      </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <span>&copy; 2026 Caleb Ward. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="contact.html">Contact</a>
+    <a href="#">Instagram</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="imageLightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview">&times;</button>
+  <img id="lightboxImage" src="" alt="Expanded preview">
+</div>
+
+<div class="video-modal" id="videoLightbox" aria-hidden="true">
+  <button class="lightbox-close" id="videoLightboxClose" aria-label="Close video preview">&times;</button>
+  <div class="video-modal-stage" id="videoLightboxStage"></div>
+</div>
+
+<script src="scripts.js" defer></script>
+</body>
+</html>
